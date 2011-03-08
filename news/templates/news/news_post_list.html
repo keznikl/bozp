@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags news_tags %}
+
+{% block meta_title %}{{ news_page.title }}{% endblock %}
+
+{% block meta_keywords %}{% metablock %}
+{% for keyword in news_page.keywords.all %}
+    {% if not forloop.first %}, {% endif %}
+    {{ keyword }}
+{% endfor %}
+{% endmetablock %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+{{ news_page.description }}
+{% endmetablock %}{% endblock %}
+
+{% block title %}
+{% editable news_page.title %}{{ news_page.title }}{% endeditable %}
+{% endblock %}
+
+{% block main %}
+
+{% if tag or category or year or month or author %}
+    <p id="description">
+    {% if tag %}
+        {% trans "Viewing posts tagged" %} {{ tag }}
+    {% else %}{% if category %}
+        {% trans "Viewing posts for the category" %} {{ category }}
+    {% else %}{% if year or month %}
+        {% trans "Viewing posts from" %} {% if month %}{{ month }}, {% endif %}
+    {{ year }}
+    {% else %}{% if author %}
+        {% trans "Viewing posts by" %} 
+        {{ author.get_full_name|default:author.username }}
+    {% endif %}{% endif %}{% endif %}{% endif %}
+    </p>
+{% else %}
+    {% editable news_page.content %}
+    {{ news_page.content|safe }}
+    {% endeditable %}
+{% endif %}
+
+
+{% for news_post in news_posts.object_list %}
+{% editable news_post.title news_post.publish_date %}
+<h2 class="news-post-title">
+    <a href="{% url news_post_detail news_post.slug %}">{{ news_post.title }}</a>
+</h2>
+<em class="since">
+    {% with news_post.user as author %}
+    <a href="{% url news_post_list_author author %}">
+        {{ author.first_name }} {{ author.last_name }}
+    </a>
+    {% endwith %}
+    {{ news_post.publish_date|timesince }} {% trans "ago" %}
+</em>
+{% endeditable %}
+
+{% editable news_post.content %}
+{{ news_post.description_from_content|safe }}
+{% endeditable %}
+
+<p class="description">
+    <a href="{% url news_post_detail news_post.slug %}">{% trans "read more" %}</a> 
+    / 
+    {% if use_disqus %}
+    <a href="{% url news_post_detail news_post.slug %}#disqus_thread">
+        {% trans "Comments" %}
+    </a>
+    {% else %}
+    <a href="{% url news_post_detail news_post.slug %}#comments">
+        {% blocktrans count news_post.num_comments as num_comments %}
+        1 comment
+        {% plural %}
+        {{ num_comments }} comments
+        {% endblocktrans %}
+    </a>
+    {% endif %}
+</p>
+{% endfor %}
+
+{% pagination_for news_posts %} 
+
+{% endblock %}
+
+{% block right_panel %}
+
+{% endblock %}
+
