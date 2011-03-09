@@ -197,6 +197,9 @@ PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
 
 NEWS_SLUG = "news"
 
+NEWS_POST_PER_PAGE = 5
+NEWS_POST_MAX_PAGING_LINKS = 15
+
 #########################
 # OPTIONAL APPLICATIONS #
 #########################

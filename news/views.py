@@ -24,11 +24,11 @@ def news_post_list(request, template="news/news_post_list.html"):
     Display a list of news posts.
     """
     settings.use_editable()
-    news_posts = newsPost.objects.published(for_user=request.user)
+    news_posts = NewsPost.objects.published(for_user=request.user)
     author = None
     news_posts = paginate(news_posts, request.GET.get("page", 1),
-        settings.news_POST_PER_PAGE,
-        settings.news_POST_MAX_PAGING_LINKS)
+        settings.NEWS_POST_PER_PAGE,
+        settings.NEWS_POST_MAX_PAGING_LINKS)
     context = {"news_posts": news_posts, "news_page": news_page()}
     return render_to_response(template, context, RequestContext(request))
 

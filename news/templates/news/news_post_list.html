@@ -48,9 +48,7 @@
 </h2>
 <em class="since">
     {% with news_post.user as author %}
-    <a href="{% url news_post_list_author author %}">
         {{ author.first_name }} {{ author.last_name }}
-    </a>
     {% endwith %}
     {{ news_post.publish_date|timesince }} {% trans "ago" %}
 </em>
