@@ -10,21 +10,22 @@
 # Name of the current theme to host during theme development.
 # THEME = ""
 
+from django.utils.translation import ugettext_lazy as _
 # Controls the ordering and grouping of the admin menu. 
-# ADMIN_MENU_ORDER = (
-#     (_("Content"), ("pages.Page", "blog.BlogPost", "blog.Comment",
-#         (_("Media Library"), "fb_browse"),)),
-#     (_("Site"), ("sites.Site", "redirects.Redirect", "conf.Setting")),
-#     (_("Users"), ("auth.User", "auth.Group",)),
-# )
+ADMIN_MENU_ORDER = (
+    (_("Content"), ("pages.Page", "news.NewsPost",
+        (_("Media Library"), "fb_browse"),)),
+    (_("Site"), ("sites.Site", "redirects.Redirect", "conf.Setting")),
+    (_("Users"), ("auth.User", "auth.Group",)),
+)
 
 # A three item sequence, each containing a sequence of template tags 
 # used to render the admin dashboard.
-# DASHBOARD_TAGS = (
-#     ("blog_tags.quick_blog", "mezzanine_tags.app_list"),
-#     ("blog_tags.recent_comments",),
-#     ("mezzanine_tags.recent_actions",),
-# )
+DASHBOARD_TAGS = (
+     ("news_tags.quick_news", "mezzanine_tags.app_list"),
+     (),
+     ("mezzanine_tags.recent_actions",),
+)
 
 
 ########################
@@ -45,11 +46,11 @@ MANAGERS = ADMINS
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = "cs-CZ"
+TIME_ZONE = "Europe/Prague"
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "Europe/Prague"
+LANGUAGE_CODE = "cs-CZ"
 
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces 
 # are displayed for error pages. Should always be set to ``False`` in 
@@ -63,7 +64,7 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = False
+USE_I18N = True
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = "8e0fb650-c125-47b5-a87d-16d0e909e9e9af3d2bec-4bf1-45ee-b106-1b370ccc810192f4f18e-f9b6-4efa-a8cd-fe75d8132df6"

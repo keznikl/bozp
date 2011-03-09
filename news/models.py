@@ -1,13 +1,7 @@
-
-from datetime import datetime
-from hashlib import md5
-
 from django.db import models
-from django.template.defaultfilters import truncatewords_html
-from django.utils.translation import ugettext, ugettext_lazy as _
+from django.utils.translation import  ugettext_lazy as _
 
-from mezzanine.conf import settings
-from mezzanine.core.models import Displayable, Ownable, Content, Slugged
+from mezzanine.core.models import Displayable, Ownable, Content
 from news.managers import NewsPostManager
 
 
