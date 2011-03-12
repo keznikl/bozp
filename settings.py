@@ -15,17 +15,24 @@ from django.utils.translation import ugettext_lazy as _
 ADMIN_MENU_ORDER = (
     (_("Content"), ("pages.Page", "news.NewsPost",
         (_("Media Library"), "fb_browse"),)),
-    (_("Site"), ("sites.Site", "redirects.Redirect", "conf.Setting")),
+    (_("Site"), ("conf.Setting")),
     (_("Users"), ("auth.User", "auth.Group",)),
 )
 
-# A three item sequence, each containing a sequence of template tags 
+
+TEMPLATE_ACCESSIBLE_SETTINGS = (
+    'SITE_TITLE', 'NEWS_IMG_DIR', 'NEWS_PER_PAGE', 'NEWS_SLUG',
+    'CONTENT_MEDIA_URL', 'DEV_SERVER', 'FORMS_USE_HTML5', 'GRAPPELLI_INSTALLED', 'GOOGLE_ANALYTICS_ID',
+    'PAGES_MENU_SHOW_ALL',)
+
+# A three item sequence, each containing a sequence of template tags
 # used to render the admin dashboard.
 DASHBOARD_TAGS = (
      ("news_tags.quick_news", "mezzanine_tags.app_list"),
-     (),
      ("mezzanine_tags.recent_actions",),
+     (),
 )
+
 
 
 ########################
@@ -152,16 +159,16 @@ INSTALLED_APPS = (
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
-    "django.contrib.redirects",
+    #"django.contrib.redirects",
     "django.contrib.sessions",
-    "django.contrib.sites",
+    #"django.contrib.sites",
     "mezzanine.conf",
     "mezzanine.core",
     #"mezzanine.blog",
     "mezzanine.forms",
     "mezzanine.pages",
     #"mezzanine.twitter",
-    "gallery",
+    #"gallery",
     "news",
 )
 
@@ -196,9 +203,9 @@ MIDDLEWARE_CLASSES = (
 PACKAGE_NAME_FILEBROWSER = "filebrowser_safe"
 PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
 
-NEWS_SLUG = "news"
 
-NEWS_POST_PER_PAGE = 5
+
+
 NEWS_POST_MAX_PAGING_LINKS = 15
 
 #########################
@@ -239,3 +246,7 @@ except ImportError:
 # applicable.
 from mezzanine.utils.conf import set_dynamic_settings
 set_dynamic_settings(globals())
+
+
+GRAPPELLI_ADMIN_TITLE = "BOZP Administrace"
+GRAPPELLI_ADMIN_HEADLINE = GRAPPELLI_ADMIN_TITLE

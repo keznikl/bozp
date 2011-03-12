@@ -1,0 +1,11 @@
+{% load pages_tags i18n %}
+
+{% spaceless %}
+{% if page_branch %}
+    <ul id="primary-menu-drop">
+        {% for subpage in page_branch %}
+            <li><a href="{% url page subpage.slug %}">{{ subpage.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endspaceless %}

@@ -13,7 +13,7 @@ class NewsPostForm(forms.ModelForm):
 
     class Meta:
         model = NewsPost
-        fields = ("title", "content", "status")
+        fields = ("title", "abstract", "content", "status")
 
     def __init__(self):
         super(NewsPostForm, self).__init__()

@@ -1,29 +1,25 @@
 {% load pages_tags i18n %}
 
 {% spaceless %}
-<ul id="primary-menu">
-    {% for page in page_branch %}
-    {% if forloop.first %}
-    <li id="primary-menu-home" class="first{% if on_home %} active{% endif %}">
-        <a href="{% url home %}">{% trans "Home" %}</a>
-    </li>
-    {% endif %}
-    {% if page.in_navigation %}
-    <li id="primary-menu-{{ page.html_id }}" 
-       class="{% if page.is_current_or_ascendant %}active{% endif %}
-        {% if forloop.last %} last{% endif %}"
-        >
-        <a href="{% url page page.slug %}">{{ page.title }}</a>
-        {% if page.has_children and settings.PAGES_MENU_SHOW_ALL or page.is_current_or_ascendant %}
-		    <ul id="primary-menu-drop">
-                {% for subpage in page.childern %}
-                    <li><a href="{% url subpage subpage.slug %}">{{ subpage.title }}</a></li>
-                {% endfor %}
-                {% page_menu page "pages/menus/tree.html" %}
-            </ul>
-		{% endif %}
-    </li>
-    {% endif %}
-    {% endfor %}
-</ul>
+<div id="menuh-container">
+    <div id="menuh">
+        <ul id="primary-menu">
+            {% for page in page_branch %}
+            {% if forloop.first %}
+            <li id="primary-menu-home" class="first{% if on_home %} active{% endif %}">
+                <a href="{% url home %}">{% trans "Home" %}</a>
+            </li>
+            {% endif %}
+            {% if page.in_navigation %}
+            <li id="primary-menu-{{ page.html_id }}"
+               class="{% if page.is_current_or_ascendant %}active{% endif %} {% if forloop.last %} last{% endif %}"
+                >
+                <a href="{% url page page.slug %}">{{ page.title }}</a>
+                {% page_menu page "pages/menus/primary-second-level.html" %}
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
 {% endspaceless %}

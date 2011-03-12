@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "content.html" %}
 {% load mezzanine_tags %}
 
 {% block meta_title %}{{ page.title }}{% endblock %}
@@ -18,5 +18,6 @@
 {% editable page.title %}{{ page.title }}{% endeditable %}
 {% endblock %}
 
-{% block main %}
+
+{% block content %}
 {% endblock %}

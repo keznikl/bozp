@@ -9,7 +9,10 @@ from mezzanine.core.admin import DisplayableAdmin, OwnableAdmin
 
 
 newspost_fieldsets = deepcopy(DisplayableAdmin.fieldsets)
+newspost_fieldsets[0][1]["fields"].append("abstract")
+newspost_fieldsets[0][1]["fields"].append("image")
 newspost_fieldsets[0][1]["fields"].append("content")
+
 
 
 class NewsPostAdmin(DisplayableAdmin, OwnableAdmin):

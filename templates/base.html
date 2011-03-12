@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/960.css" type="text/css" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" type="text/css" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/global.css" type="text/css" />
+    <style type="text/css" media="screen"> @import url("{{ MEDIA_URL }}css/menuh.css"); </style>
+    <!--[if lt IE 7]>
+    <style type="text/css" media="screen">
+        body{behavior:url({{ MEDIA_URL }}css/csshover.htc); }
+    </style>
+    <![endif]-->
     {% block extra_head %}{% endblock %}
 
 </head>
@@ -18,7 +24,7 @@
 
 
 
-<div class="container_12 clearfix">
+<div class="container_12 clearfix" >
 
     <div id="grid-top">
         <img id="logo" src="{{ MEDIA_URL }}img/logo.png"
@@ -27,49 +33,15 @@
         {% page_menu "pages/menus/primary.html" %}
     </div>
 
-
-    <div id="grid-left" class="grid_3 grid">
-        {% page_menu "pages/menus/tree.html" %}
+    <div class="clearfix" id="container">
+    {% block main %}{% endblock %}
     </div>
 
-    <div id="grid-middle" class="grid_6 grid">
-        <div class="gutter">
-            <h1>{% block title %}{% endblock %}</h1>
-            <div id="breadcrumb-menu">
-                {% block breadcrumb_menu %}
-                    {% page_menu "pages/menus/breadcrumb.html" %}
-                {% endblock %}
-            </div>
-            {% block main %}{% endblock %}
-        </div>
+    <div id="grid-bottom" class="clearfix">
+        Copyright
     </div>
-
-    <div id="grid-right" class="grid_3 grid">
-        {% include "includes/search.html" %}
-        {% block right_panel %}
-
-        {% endblock %}
-        <p class="mezzanine">
-            {% trans "Powered by" %} 
-            <a href="http://mezzanine.jupo.org">Mezzanine</a><br />
-            <a href="{% url set_device "mobile" %}?next={{ request.path }}">
-                {% trans "View Mobile Site." %}
-            </a>
-        </p>
-    </div>
-
+    {% include "includes/footer_scripts.html" %}
 </div>
-
-<div id="grid-bottom">
-    <div class="container_12 clearfix">
-        <div class="grid_6 push_3 grid">
-            {% page_menu "pages/menus/footer.html" %}
-        </div>
-    </div>
-</div>
-
-{% include "includes/footer_scripts.html" %}
-
 </body>
 </html>
 

@@ -1,0 +1,25 @@
+{% load mezzanine_tags i18n %}
+
+<div id="latest-news">
+    {% if news_post %}
+    <h1>
+        {% editable news_post.title%}
+            {{ news_post.title|safe }}
+        {% endeditable %}
+    </h1>
+    {% editable news_post.image %}
+        <img src="{{ MEDIA_URL }}{{  news_post.image }}" />
+    {% endeditable %}
+    <div class="date">
+        {% editable news_post.publish_date %}
+            {{ news_post.publish_date }}
+        {% endeditable %}
+    </div>
+    <div class="content">
+        {% editable news_post.abstract %}
+            {{ news_post.abstract|safe }}
+        {% endeditable %}
+    </div>
+    {% endif %}
+</div>
+
