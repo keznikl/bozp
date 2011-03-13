@@ -1,6 +1,7 @@
 from django.core.exceptions import ObjectDoesNotExist
 from news.forms import NewsPostForm
 from news.models import NewsPost
+from news.views import news_page
 from mezzanine import template
 
 
@@ -33,6 +34,7 @@ def latest_news(context):
         context["news_post"] = NewsPost.objects.published().latest('publish_date')
     except ObjectDoesNotExist:
         pass
+    context["news_page"] = news_page()
     return context
 
 

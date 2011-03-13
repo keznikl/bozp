@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
-{% load i18n %}
-{% load news_tags %}
+{% load i18n  %}
+{% load news_tags global_tags %}
 
 {% block meta_title %}{% trans "Home" %}{% endblock %}
 
@@ -14,10 +14,9 @@
         {% latest_news %}
     </div></div>
     <div  class="grid_6 grid"><div id="index-right">
-        <img src="{{ MEDIA_URL }}img/index-example.png" alt="Index">
+        <img src="{{ MEDIA_URL }}img/index-example.png" alt="Index" id="index-image">
     </div></div>
     <div id="index-bottom" >
-        <h1>Bottom title</h1>
-        <p>Bottom text</p>
+        {% get_homepage %}
     </div>
 {% endblock %}

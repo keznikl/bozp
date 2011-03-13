@@ -1,5 +1,5 @@
-{% extends "content.html" %}
-{% load mezzanine_tags %}
+{% extends "base.html" %}
+{% load mezzanine_tags pages_tags %}
 
 {% block meta_title %}{{ page.title }}{% endblock %}
 
@@ -14,10 +14,21 @@
 {{ page.description }}
 {% endmetablock %}{% endblock %}
 
-{% block title %}
-{% editable page.title %}{{ page.title }}{% endeditable %}
-{% endblock %}
 
 
-{% block content %}
+
+{% block main %}
+    <div class="content" >
+        <h1>
+            {% block title %}
+                {% editable page.title %}{{ page.title }}{% endeditable %}
+            {% endblock %}
+        </h1>
+        <div id="breadcrumb-menu">
+            {% block breadcrumb_menu %}
+                {% page_menu "pages/menus/breadcrumb.html" %}
+            {% endblock %}
+        </div>
+        {% block content %}{% endblock %}
+    </div>
 {% endblock %}

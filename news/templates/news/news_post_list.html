@@ -19,43 +19,44 @@
 {% endblock %}
 
 {% block main %}
-{% for news_post in news_posts.object_list %}
-{% editable news_post.title news_post.publish_date %}
-<h2 class="news-post-title">
-    <a href="{% url news_post_detail news_post.slug %}">{{ news_post.title }}</a>
-</h2>
-<em class="since">
-    {% with news_post.user as author %}
-        {{ author.first_name }} {{ author.last_name }}
-    {% endwith %}
-    {{ news_post.publish_date|timesince }} {% trans "ago" %}
-</em>
-{% endeditable %}
+<div class="content news" >
+    <h1>{% trans "News List" %}</h1>
+    {% for news_post in news_posts.object_list %}
+        <div class="news-entry" >
+        {% if news_post.image %}
+            {% editable news_post.image %}
+                <img src="{{ MEDIA_URL }}{{ news_post.image }}" alt="{{ news_post.title }}" >
+            {% endeditable %}
+        {% endif %}
 
-{% editable news_post.content %}
-{{ news_post.description_from_content|safe }}
-{% endeditable %}
+        {% editable news_post.title news_post.publish_date %}
+        <h2 class="news-post-title">
+            <a href="{% url news_post_detail news_post.slug %}">{{ news_post.title }}</a>
+        </h2>
+        <div class="date">
+            {% with news_post.user as author %}
+                {{ author.first_name }} {{ author.last_name }}
+            {% endwith %}
+            {{ news_post.publish_date|timesince }} {% trans "ago" %}
+        </div>
+        {% endeditable %}
 
-<p class="description">
-    <a href="{% url news_post_detail news_post.slug %}">{% trans "read more" %}</a> 
-    / 
-    {% if use_disqus %}
-    <a href="{% url news_post_detail news_post.slug %}#disqus_thread">
-        {% trans "Comments" %}
-    </a>
-    {% else %}
-    <a href="{% url news_post_detail news_post.slug %}#comments">
-        {% blocktrans count news_post.num_comments as num_comments %}
-        1 comment
-        {% plural %}
-        {{ num_comments }} comments
-        {% endblocktrans %}
-    </a>
-    {% endif %}
-</p>
-{% endfor %}
+        {% editable news_post.content %}
+        <div class="text">
+            {{ news_post.description_from_content|safe }}
+        </div>
+        {% endeditable %}
 
-{% pagination_for news_posts %} 
+        <div class="description">
+            <a href="{% url news_post_detail news_post.slug %}">{% trans "read more" %}</a>
+        </div>
+        </div>
+    {% endfor %}
+
+    <div class="pager">
+    {% pagination_for news_posts %}
+    </div>
+<div>
 
 {% endblock %}
 

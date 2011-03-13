@@ -1,6 +1,6 @@
 {% load mezzanine_tags i18n %}
 
-<div id="latest-news">
+<div id="latest-news" class="news">
     {% if news_post %}
     <h1>
         {% editable news_post.title%}
@@ -15,10 +15,13 @@
             {{ news_post.publish_date }}
         {% endeditable %}
     </div>
-    <div class="content">
+    <div class="text">
         {% editable news_post.abstract %}
             {{ news_post.abstract|safe }}
         {% endeditable %}
+    </div>
+    <div class="news-button">
+        <a href="{{ news_page.get_absolute_url }}">&gt;&nbsp;{% trans "News Archive" %}</a>
     </div>
     {% endif %}
 </div>

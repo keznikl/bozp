@@ -12,7 +12,7 @@
             {% endif %}
             {% if page.in_navigation %}
             <li id="primary-menu-{{ page.html_id }}"
-               class="{% if page.is_current_or_ascendant %}active{% endif %} {% if forloop.last %} last{% endif %}"
+               class="{% if page.is_current_or_ascendant %}active{% endif %} {% ifequal page last_in_navigation %} last{% endifequal %}"
                 >
                 <a href="{% url page page.slug %}">{{ page.title }}</a>
                 {% page_menu page "pages/menus/primary-second-level.html" %}

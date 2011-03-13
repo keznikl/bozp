@@ -23,7 +23,7 @@ ADMIN_MENU_ORDER = (
 TEMPLATE_ACCESSIBLE_SETTINGS = (
     'SITE_TITLE', 'NEWS_IMG_DIR', 'NEWS_PER_PAGE', 'NEWS_SLUG',
     'CONTENT_MEDIA_URL', 'DEV_SERVER', 'FORMS_USE_HTML5', 'GRAPPELLI_INSTALLED', 'GOOGLE_ANALYTICS_ID',
-    'PAGES_MENU_SHOW_ALL',)
+    'PAGES_MENU_SHOW_ALL', 'FOOTER_MESSAGE')
 
 # A three item sequence, each containing a sequence of template tags
 # used to render the admin dashboard.
@@ -161,7 +161,7 @@ INSTALLED_APPS = (
     "django.contrib.contenttypes",
     #"django.contrib.redirects",
     "django.contrib.sessions",
-    #"django.contrib.sites",
+    "django.contrib.sites",
     "mezzanine.conf",
     "mezzanine.core",
     #"mezzanine.blog",
@@ -170,6 +170,7 @@ INSTALLED_APPS = (
     #"mezzanine.twitter",
     #"gallery",
     "news",
+    "bozpsite",
 )
 
 # List of processors used by RequestContext to populate the context.

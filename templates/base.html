@@ -1,4 +1,4 @@
-{% load pages_tags i18n %}
+{% load pages_tags global_tags i18n %}
 <html>
 <head>
 
@@ -38,7 +38,7 @@
     </div>
 
     <div id="grid-bottom" class="clearfix">
-        Copyright
+        {% footer_text %}
     </div>
     {% include "includes/footer_scripts.html" %}
 </div>

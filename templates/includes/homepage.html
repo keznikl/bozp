@@ -1,0 +1,14 @@
+{% load i18n mezzanine_tags %}
+{%  if homepage %}
+
+
+        {% editable homepage.title %}
+<h1>
+            {{ homepage.title|safe }}
+    </h1>
+        {% endeditable %}
+
+    {% editable homepage.content %}
+        {{ homepage.content|safe }}
+    {% endeditable %}
+{% endif %}

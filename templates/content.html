@@ -3,23 +3,23 @@
 {% load i18n pages_tags %}
 
 
-{% block meta_title %}{% trans "Home" %}{% endblock %}
+    {% block meta_title %}{% trans "Home" %}{% endblock %}
 
 
-
-{% block main %}
-    <div id="grid-left" class="grid_3 grid">
-    </div>
-
-    <div id="grid-middle" class="grid_9 grid">
-        <div >
-            <h1>{% block title %}{% endblock %}</h1>
-            <div id="breadcrumb-menu">
-                {% block breadcrumb_menu %}
-                    {% page_menu "pages/menus/breadcrumb.html" %}
-                {% endblock %}
-            </div>
-            {% block content %}{% endblock %}
+    {% block main %}
+        <div id="grid-left" class="grid_3 grid">
+            {% block content-left %}{% endblock %}
         </div>
-    </div>
-{% endblock %}
+
+        <div id="grid-middle" class="grid_9 grid">
+            <div >
+                <h1>{% block title %}{% endblock %}</h1>
+                <div id="breadcrumb-menu">
+                    {% block breadcrumb_menu %}
+                        {% page_menu "pages/menus/breadcrumb.html" %}
+                    {% endblock %}
+                </div>
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    {% endblock %}
