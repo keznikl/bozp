@@ -22,7 +22,7 @@
 <div class="content news" >
     <h1>{% trans "News List" %}</h1>
     {% for news_post in news_posts.object_list %}
-        <div class="news-entry" >
+    <div class="news-entry" >
         {% if news_post.image %}
             {% editable news_post.image %}
                 <img src="{{ MEDIA_URL }}{{ news_post.image }}" alt="{{ news_post.title }}" >
@@ -50,17 +50,15 @@
         <div class="description">
             <a href="{% url news_post_detail news_post.slug %}">{% trans "read more" %}</a>
         </div>
-        </div>
+    </div>
     {% endfor %}
 
     <div class="pager">
     {% pagination_for news_posts %}
     </div>
-<div>
+
+</div>
 
 {% endblock %}
 
-{% block right_panel %}
-
-{% endblock %}
 

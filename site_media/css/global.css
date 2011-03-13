@@ -12,6 +12,7 @@ form#editable-toolbar {
 
 body {
     font-family:Verdana;
+    font-size:12px;
 }
 .grid {
     padding:30px 0;
@@ -22,12 +23,15 @@ body {
 #grid-top {
     background:#fff;
     text-align:right; padding:0; position:relative;
-    height: 110px;
+    height: 107px;
 
 }
 
 ul#primary-menu {position:relative; top:70px; right:0px; }
-#primary-menu li > a, #primary-menu li > a:visited {color:#fff; font:normal Tahoma 14px; text-decoration:none;}
+#primary-menu li > a, #primary-menu li > a:visited {
+    color:#fff; font:normal Tahoma 14px; text-decoration:none;
+    text-transform:uppercase;
+}
 
 ul#primary-menu > li {
     display:inline-block;
@@ -36,6 +40,7 @@ ul#primary-menu > li {
     border-bottom:5px solid #fff;
     background-color:#cc0001;
     position:relative;
+    height: 12px;
 }
 #primary-menu .last {
     margin-right:0px;
@@ -45,14 +50,15 @@ ul#primary-menu > li {
     border-bottom:5px solid #f5f5f5;
 }
 #primary-menu .active a, #primary-menu .active a:visited {color:#000;}
+#primary-menu .active #primary-menu-drop a, #primary-menu .active #primary-menu-drop a:visited {color:#fff;}
 
 #primary-menu-drop {
-    position:absolute;  top:37px; left:0px;
+    position:absolute;  top:33px; left:0px;
     padding: 5px 10px; background-color:#cc0001; text-align:left;
     min-width:100px;
 }
 #primary-menu-drop li {padding:2px 0px;}
-#primary-menu-drop li > a, #primary-menu-drop li > a:visited {color:#fff; font-size:11px;}
+#primary-menu-drop li a, #primary-menu-drop li  a:visited {color:#fff; font-size:11px; font-weight:normal;}
 
 .container_12 {
     background:#fff;
@@ -93,7 +99,7 @@ ul#primary-menu > li {
     display:block; margin-top:3px;
 }
 #grid-bottom {
-    padding:10px;
+    padding:20px 20px;
     font-size:12px;
 }
 
@@ -105,7 +111,7 @@ p,
 .share,
 #comments,
 .comment {
-    margin:20px 0;
+    margin:10px 0;
 }
 h1 {
     font-size:130%;font-weight:normal; text-transform:uppercase;
@@ -304,6 +310,7 @@ ul .posted {
 .news .date {color: #cc0001; font-size:10px; font-weight:bold;}
 #latest-news .date {margin-left:170px; padding-top:10px;}
 
+
 .news .text {font-size:12px;  }
 .news .text p {margin:10px 0px;}
 #latest-news .text { margin-left:170px; margin-top:14px;}
@@ -311,7 +318,7 @@ ul .posted {
 .news-entry h2 {
     font-size:15px; font-weight:normal; text-transform:uppercase; margin-bottom:10px;
 }
-.news-entry h2 a {
+.news-entry h2 a, .news-entry h2 a:visited {
     text-decoration:none; color:#000;
 }
 .news-entry .description a {
@@ -329,5 +336,10 @@ ul .posted {
     color:#fff; text-decoration:none; font-size:12px; text-transform:uppercase;
 }
 
+.news-post {margin-left:170px;}
+.news-post .date {color: #cc0001; font-size:10px; font-weight:bold; margin:0px; padding:0px;}
+.news-post .description {color:#777; padding:10px 0px;}
+.news-img { position:absolute; top:150px; }
+.news-img img {width:150px;}
 
-.content {padding: 40px 20px;}
+.content {padding: 40px 20px 0px 20px; }

@@ -18,3 +18,11 @@ register_setting(
     editable=True,
     default=u"homepage",
 )
+
+register_setting(
+    name="HOMEPAGE_IMAGE_DIR",
+    label=_("Homepage Image Directory"),
+    description=_("Directory for homepage images."),
+    editable=True,
+    default=u"uploads/homepage",
+)

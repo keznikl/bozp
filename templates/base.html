@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/960.css" type="text/css" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" type="text/css" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/global.css" type="text/css" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/content.css" type="text/css" />
     <style type="text/css" media="screen"> @import url("{{ MEDIA_URL }}css/menuh.css"); </style>
     <!--[if lt IE 7]>
     <style type="text/css" media="screen">
@@ -38,7 +39,7 @@
     </div>
 
     <div id="grid-bottom" class="clearfix">
-        {% footer_text %}
+        {% block footer %}{% footer_text %}{% endblock %}
     </div>
     {% include "includes/footer_scripts.html" %}
 </div>

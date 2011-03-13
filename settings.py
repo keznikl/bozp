@@ -33,7 +33,7 @@ DASHBOARD_TAGS = (
      (),
 )
 
-
+DATE_FORMAT = "d.m.Y"
 
 ########################
 # MAIN DJANGO SETTINGS #
