@@ -2,8 +2,8 @@
 
 {% load mezzanine_tags %}
 
-{% block main %}{{ block.super }}
-<div class="content" >
+{% block content %}{{ block.super }}
+
 {% if request.GET.sent %}
     {% editable page.form.response %}
     {{ page.form.response|safe }}
@@ -18,6 +18,6 @@
         <input class="button" type="submit" value="{{ page.form.button_text }}" />
     </form>
 {% endif %}
-</div>
+
 {% endblock %}
 
