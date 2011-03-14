@@ -36,11 +36,13 @@
 
     <div class="clearfix" id="container">
     {% block main %}{% endblock %}
+
+      <div id="grid-bottom" class="clearfix">
+        {% block footer %}{% footer_text %}{% endblock %}
+      </div>
     </div>
 
-    <div id="grid-bottom" class="clearfix">
-        {% block footer %}{% footer_text %}{% endblock %}
-    </div>
+
     {% include "includes/footer_scripts.html" %}
 </div>
 </body>
