@@ -149,7 +149,6 @@ ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, "templates"),
     os.path.join(PROJECT_ROOT, "news/templates"),
-    os.path.join(PROJECT_ROOT, "grappelli_safe/templates"),
     os.path.join(PROJECT_ROOT, "filebrowser_safe/templates"),
 )
 
