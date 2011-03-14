@@ -146,7 +146,12 @@ ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
 # Always use forward slashes, even on Windows.
 # Don't forget to use absolute paths, not relative paths.
-TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_ROOT, "templates"),
+    os.path.join(PROJECT_ROOT, "news/templates"),
+    os.path.join(PROJECT_ROOT, "grappelli_safe/templates"),
+    os.path.join(PROJECT_ROOT, "filebrowser_safe/templates"),
+)
 
 LOGIN_URL = "/admin/"
 
@@ -154,6 +159,13 @@ LOGIN_URL = "/admin/"
 ################
 # APPLICATIONS #
 ################
+
+# Store these package names here as they may change in the future since
+# at the moment we are using custom forks of them.
+PACKAGE_NAME_FILEBROWSER = "filebrowser_safe"
+PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
+
+
 
 INSTALLED_APPS = (
     "django.contrib.admin",
@@ -171,6 +183,8 @@ INSTALLED_APPS = (
     #"gallery",
     "news",
     "bozpsite",
+    PACKAGE_NAME_FILEBROWSER,
+    PACKAGE_NAME_GRAPPELLI,
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -199,11 +213,6 @@ MIDDLEWARE_CLASSES = (
     "mezzanine.core.middleware.AdminLoginInterfaceSelector",
 )
 
-# Store these package names here as they may change in the future since
-# at the moment we are using custom forks of them.
-PACKAGE_NAME_FILEBROWSER = "filebrowser_safe"
-PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
-
 
 
 
@@ -218,8 +227,6 @@ OPTIONAL_APPS = (
     "debug_toolbar",
     "south",
     "django_extensions",
-    PACKAGE_NAME_FILEBROWSER,
-    PACKAGE_NAME_GRAPPELLI,
 )
 
 DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
