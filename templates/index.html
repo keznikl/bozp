@@ -10,13 +10,13 @@
 {% endblock %}
 
 {% block main %}
-    <div class="grid_6 grid"><div id="index-left" >
+    <div class="grid_8 grid"><div id="index-left" >
         {% latest_news %}
     </div></div>
-    <div  class="grid_6 grid"><div id="index-right">
+    <div  class="grid_8 grid"><div id="index-right" >
         {% homepage_image %}
     </div></div>
-    <div id="index-bottom" >
+    <div id="index-bottom" class="content" >
         {% get_homepage %}
     </div>
 {% endblock %}

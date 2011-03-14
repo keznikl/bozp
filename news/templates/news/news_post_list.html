@@ -37,7 +37,7 @@
             {% with news_post.user as author %}
                 {{ author.first_name }} {{ author.last_name }}
             {% endwith %}
-            {{ news_post.publish_date|timesince }} {% trans "ago" %}
+            {{ news_post.publish_date|date:"DATE_FORMAT" }}
         </div>
         {% endeditable %}
 

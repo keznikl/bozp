@@ -114,7 +114,7 @@ p,
     margin:10px 0;
 }
 h1 {
-    font-size:130%;font-weight:normal; text-transform:uppercase;
+    font-size:130%;font-weight:bold; text-transform:uppercase;
 }
 h2 {
     font-size:110%;
@@ -308,15 +308,15 @@ ul .posted {
 #latest-news img {margin-right:14px;}
 
 .news .date {color: #cc0001; font-size:10px; font-weight:bold;}
-#latest-news .date {margin-left:170px; padding-top:10px;}
+#latest-news .date { padding-top:10px;}
 
 
 .news .text {font-size:12px;  }
 .news .text p {margin:10px 0px;}
-#latest-news .text { margin-left:170px; margin-top:14px;}
+#latest-news .text {  margin-top:14px;}
 
 .news-entry h2 {
-    font-size:15px; font-weight:normal; text-transform:uppercase; margin-bottom:10px;
+    font-size:15px; font-weight:bold; text-transform:uppercase; margin-bottom:10px;
 }
 .news-entry h2 a, .news-entry h2 a:visited {
     text-decoration:none; color:#000;
@@ -325,7 +325,7 @@ ul .posted {
     text-decoration:none; color:#cc0001; font-size:13px;
 }
 .news-entry .date, .news-entry .text, .news-entry .description, .news-entry h2 {
-    margin-left:170px;
+    margin-left:190px;
 }
 
 #latest-news .news-button {
@@ -336,10 +336,10 @@ ul .posted {
     color:#fff; text-decoration:none; font-size:12px; text-transform:uppercase;
 }
 
-.news-post {margin-left:170px;}
+
 .news-post .date {color: #cc0001; font-size:10px; font-weight:bold; margin:0px; padding:0px;}
 .news-post .description {color:#777; padding:10px 0px;}
-.news-img { position:absolute; top:150px; }
-.news-img img {width:150px;}
+.news-img img {width:150px; margin-left:10px;}
 
-.content {padding: 40px 20px 0px 20px; }
+.content { padding: 20px 20px 0px 30px; }
+.content-left { padding: 20px 0px 0px 10px; }

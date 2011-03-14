@@ -1,4 +1,4 @@
-{% extends "pages/page.html" %}
+{% extends "content.html" %}
 {% load mezzanine_tags i18n %}
 
 
@@ -32,37 +32,39 @@
 </div>
 {% endblock %}
 
+{% block content-left %}
+    <div class="news-img">
+        <img src="{{ MEDIA_URL }}{{ news_post.image }}" />
+    </div>
+{% endblock %}
+
 {% block content %}
-<div class="news-img">
+    <div class="news-post">
+        <div class="date">
+            {{ news_post.publish_date|date:"DATE_FORMAT" }}
+        </div>
 
-    <img src="{{ MEDIA_URL }}{{ news_post.image }}" />
+        <div class="description">
+            {% editable news_post.abstract %}
+            {{ news_post.abstract|safe }}
+            {% endeditable %}
+        </div>
 
-</div>
-<div class="news-post">
-<div class="date">
-    {{ news_post.publish_date|date:"DATE_FORMAT" }}
-</div>
-
-<div class="description">
-    {% editable news_post.abstract %}
-    {{ news_post.abstract|safe }}
-    {% endeditable %}
-</div>
-
-{% editable news_post.content %}
-{{ news_post.content|safe }}
-{% endeditable %}
+        {% editable news_post.content %}
+        {{ news_post.content|safe }}
+        {% endeditable %}
 
 
-<div class="share">
-{% set_short_url_for news_post %}
-{% trans "Share this on:" %}
-<a target=_"blank" href="http://twitter.com/home?status={{ news_post.short_url|urlencode }}%20{{ news_post.title|urlencode }}">Twitter</a>
- / 
-<a target=_"blank" href="http://facebook.com/sharer.php?u={{ request.build_absolute_uri }}&t={{ news_post.title|urlencode }}">Facebook</a>
-</div>
+        <div class="share">
+        {% set_short_url_for news_post %}
+        {% trans "Share this on:" %}
+        <a target=_"blank" href="http://twitter.com/home?status={{ news_post.short_url|urlencode }}%20{{ news_post.title|urlencode }}">Twitter</a>
+         /
+        <a target=_"blank" href="http://facebook.com/sharer.php?u={{ request.build_absolute_uri }}&t={{ news_post.title|urlencode }}">Facebook</a>
+        </div>
 
-</div>
+    </div>
+
 {% endblock %}
 
 

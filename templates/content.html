@@ -1,25 +1,40 @@
 {% extends "base.html" %}
 
-{% load i18n pages_tags %}
+{% load i18n mezzanine_tags pages_tags %}
+
+{% block meta_title %}{{ page.title }}{% endblock %}
+
+{% block meta_keywords %}{% metablock %}
+    {% for keyword in page.keywords.all %}
+        {% if not forloop.first %}, {% endif %}
+        {{ keyword }}
+    {% endfor %}
+{% endmetablock %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+    {{ page.description }}
+{% endmetablock %}{% endblock %}
 
 
-    {% block meta_title %}{% trans "Home" %}{% endblock %}
 
-
-    {% block main %}
-        <div id="grid-left" class="grid_3 grid">
+{% block main %}
+    <div class="grid_3 grid">
+        <div class="content-left">
             {% block content-left %}{% endblock %}
         </div>
+    </div>
 
-        <div id="grid-middle" class="grid_9 grid">
-            <div >
-                <h1>{% block title %}{% endblock %}</h1>
-                <div id="breadcrumb-menu">
-                    {% block breadcrumb_menu %}
-                        {% page_menu "pages/menus/breadcrumb.html" %}
-                    {% endblock %}
-                </div>
-                {% block content %}{% endblock %}
+    <div class="grid_13 grid">
+        <div class="content">
+            <h1>{% block title %}{% endblock %}</h1>
+            <div id="breadcrumb-menu">
+                {% block breadcrumb_menu %}
+                    {% page_menu "pages/menus/breadcrumb.html" %}
+                {% endblock %}
             </div>
+
+            {% block content %}{% endblock %}
+
         </div>
-    {% endblock %}
+    </div>
+{% endblock %}

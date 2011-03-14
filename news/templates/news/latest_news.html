@@ -4,7 +4,7 @@
     {% if news_post %}
     <h1>
         {% editable news_post.title%}
-            {{ news_post.title|safe }}
+            <a href="{% url news_post_detail news_post.slug %}">{{ news_post.title|safe }}</a>
         {% endeditable %}
     </h1>
     {% editable news_post.image %}
@@ -12,7 +12,7 @@
     {% endeditable %}
     <div class="date">
         {% editable news_post.publish_date %}
-            {{ news_post.publish_date }}
+            {{ news_post.publish_date|date:"DATE_FORMAT" }}
         {% endeditable %}
     </div>
     <div class="text">

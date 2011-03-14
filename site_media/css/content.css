@@ -2,3 +2,6 @@
 .content h2 {font-weight:normal;color:#cc0001; font-size:14px; text-transform:uppercase;}
 .content ul {list-style-image:url('../img/bullet.png'); list-style-position:inside;}
 .content ul li {margin:5px 0px;}
+
+
+h1 a, h1 a:visited {color:#000; text-decoration:none;}

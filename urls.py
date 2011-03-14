@@ -16,7 +16,7 @@ urlpatterns = patterns("",
     ("^", include("mezzanine.urls")),
 )
 
-if settings.DEBUG:
-    urlpatterns = patterns('',
-        (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
-    ) + urlpatterns
+#if settings.DEBUG and not settings.DEV_SERVER:
+#    urlpatterns = patterns('',
+#        (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+#    ) + urlpatterns
