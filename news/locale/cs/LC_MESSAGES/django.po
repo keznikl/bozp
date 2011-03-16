@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-03-16 23:09+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n>1 && n<5 ? 1 : 2;\n"
+
+#: defaults.py:8
+msgid "News slug"
+msgstr "Zkratka aktualit"
+
+#: defaults.py:9
+msgid "The slug name for page representing the news list."
+msgstr "Zkratka pro seznam aktualit."
+
+#: defaults.py:16
+msgid "News per page"
+msgstr "Aktuality na stránce"
+
+#: defaults.py:17
+msgid "The number of news entries to show on a single page."
+msgstr "Počet aktualit na jedné stránce."
+
+#: defaults.py:24
+msgid "News image directory"
+msgstr "Adresář obrázků pro aktuality"
+
+#: defaults.py:25
+msgid "The directory for news images."
+msgstr "Adresář obrázků pro aktuality."
+
+#: models.py:13
+msgid "Abstract"
+msgstr "Abstrakt"
+
+#: models.py:19
+msgid "News post"
+msgstr "Aktualita"
+
+#: models.py:20
+msgid "News posts"
+msgstr "Aktuality"
+
+#: templates/admin/includes/quick_news.html:5
+msgid "Quick News Post"
+msgstr "Rychlá aktualita"
+
+#: templates/admin/includes/quick_news.html:12
+msgid "Save Draft"
+msgstr "Uložit návrh"
+
+#: templates/news/latest_news.html:24
+msgid "News Archive"
+msgstr "Archiv aktualit"
+
+#: templates/news/news_post_detail.html:28
+msgid "Jolana Mokošová"
+msgstr "Jolana Mokošová"
+
+#: templates/news/news_post_detail.html:60
+msgid "Share this on:"
+msgstr "Sdílet stránku na:"
+
+#: templates/news/news_post_list.html:23
+msgid "News List"
+msgstr "Seznam aktualit"
+
+#: templates/news/news_post_list.html:51
+msgid "read more"
+msgstr "číst více"

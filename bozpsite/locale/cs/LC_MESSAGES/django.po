@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-03-16 23:09+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n>1 && n<5 ? 1 : 2;\n"
+
+#: defaults.py:8
+msgid "Footer message"
+msgstr "Zpáva patičky"
+
+#: defaults.py:9
+msgid "The message shown in the footer."
+msgstr "Text zobrazený v patičce stránky."
+
+#: defaults.py:16
+msgid "Homepage Slug"
+msgstr "Homepage zkratka"
+
+#: defaults.py:17
+msgid "Slug of the homepage."
+msgstr "Zkratka stránky na homepage."
+
+#: defaults.py:24
+msgid "Homepage Image Directory"
+msgstr "Adresář obrázků na homepage"
+
+#: defaults.py:25
+msgid "Directory for homepage images."
+msgstr "Adresář obrázků na homepage."
+
+#: templatetags/global_tags.py:46
+msgid "The requested Folder does not exist."
+msgstr "Požadovaný adresář neexistuje."
