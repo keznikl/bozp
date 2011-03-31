@@ -41,9 +41,9 @@
         </div>
         {% endeditable %}
 
-        {% editable news_post.content %}
+        {% editable news_post.abstract %}
         <div class="text">
-            {{ news_post.description_from_content|safe }}
+            {{ news_post.abstract|safe }}
         </div>
         {% endeditable %}
 
