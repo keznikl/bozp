@@ -60,7 +60,7 @@
         {% trans "Share this on:" %}
         <a target=_"blank" href="http://twitter.com/home?status={{ news_post.short_url|urlencode }}%20{{ news_post.title|urlencode }}">Twitter</a>
          /
-        <a target=_"blank" href="http://facebook.com/sharer.php?u={{ request.build_absolute_uri }}&t={{ news_post.title|urlencode }}">Facebook</a>
+        <a target=_"blank" href="http://facebook.com/sharer.php?u={{ news_post.short_url|urlencode }}&t={{ news_post.title|urlencode }}">Facebook</a>
         </div>
 
     </div>

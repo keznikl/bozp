@@ -1,6 +1,6 @@
 {% extends "pages/page.html" %}
 
-{% load mezzanine_tags %}
+{% load mezzanine_tags pages_tags %}
 
 
 
@@ -10,4 +10,11 @@
 {{ page.contentpage.content|safe }}
 {% endeditable %}
 
+ <div class="share">
+    {% set_short_url_for page %}
+
+    <a target=_"blank" href="http://twitter.com/home?status={{ page.short_url|urlencode }}%20{{ page.title|urlencode }}">Twitter</a>
+     /
+    <a target=_"blank" href="http://facebook.com/sharer.php?u={{ page.short_url|urlencode  }}&t={{ page.title|urlencode }}">Facebook</a>
+</div>
 {% endblock %}

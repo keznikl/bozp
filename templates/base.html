@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" type="text/css" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/global.css" type="text/css" />
     <link rel="stylesheet" href="{{ MEDIA_URL }}css/content.css" type="text/css" />
-    <style type="text/css" media="screen"> @import url("{{ MEDIA_URL }}css/menuh.css"); </style>
-    <!--[if lt IE 7]>
     <style type="text/css" media="screen">
-        body{behavior:url({{ MEDIA_URL }}css/csshover.htc); }
+        @import url("{{ MEDIA_URL }}css/menuh.css");
+        body {
+            behavior: url("{{ MEDIA_URL }}css/csshover3.htc");
+        }
     </style>
-    <![endif]-->
+
+
     {% block extra_head %}{% endblock %}
 
 </head>
@@ -25,7 +27,7 @@
 
 
 
-<div class="container_16 clearfix" >
+<div class="container_16 container" >
 
     <div id="grid-top">
         <img id="logo" src="{{ MEDIA_URL }}img/logo.png"

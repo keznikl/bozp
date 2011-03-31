@@ -1,4 +1,5 @@
 
+
 #menuh-container {}
 
 #menuh {}
@@ -43,7 +44,7 @@
 	vertical-align: bottom;		/* Sophie Dennis contribution for IE7 */
 	}
 
-#menuh ul ul
+div#menuh ul ul
 	{
 	/*position:absolute;*/
 	z-index:500;
@@ -61,20 +62,21 @@
 
 div#menuh li:hover
 	{
-	cursor:pointer;
+
 	z-index:100;
 	}
 
-div#menuh li:hover ul ul,
-div#menuh li li:hover ul ul,
-div#menuh li li li:hover ul ul,
-div#menuh li li li li:hover ul ul
-{display:none;}
+div#menuh ul ul,
+div#menuh ul li:hover ul ul,
+div#menuh ul ul li:hover ul ul
+{display: none;}
 
-div#menuh li:hover ul,
-div#menuh li li:hover ul,
-div#menuh li li li:hover ul,
-div#menuh li li li li:hover ul
-{display:block;}
+div#menuh ul li:hover ul,
+div#menuh ul ul li:hover ul,
+div#menuh ul ul ul li:hover ul
+{display: block;
+
+}
+
 
 /* End CSS Drop Down Menu */
