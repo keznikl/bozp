@@ -1,7 +1,7 @@
 .content a, .content a:visited {color:#cc0001;text-decoration:underline;}
 .content h2 {font-weight:normal;color:#cc0001; font-size:14px; text-transform:uppercase;}
-.content ul {list-style-image:url('../img/bullet.png'); list-style-position:inside;}
-.content ul li {margin:5px 0px;}
+.content ul {list-style-image:url('../img/bullet.png'); list-style-position:inside;  }
+.content ul li {margin:5px 0px; padding:0px;}
 
 
 
